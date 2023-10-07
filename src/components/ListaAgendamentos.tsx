@@ -30,4 +30,4 @@ function ListaAgendamentos() {
     </IonAccordionGroup>
   );
 }
-export default Example;
+export default ListaAgendamentos;
