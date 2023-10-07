@@ -7,6 +7,7 @@
 * Rodrigo Paris
 
 ## Iniciando aplicação
+
 npm install
 
 ionic serve
