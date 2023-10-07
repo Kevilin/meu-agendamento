@@ -1,0 +1,7 @@
+{
+  "name": "meu-agendamento",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
