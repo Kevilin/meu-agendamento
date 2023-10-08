@@ -10,10 +10,10 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { calendarNumberOutline, listOutline } from 'ionicons/icons';
+import { calendarNumberOutline, listOutline, personCircleOutline  } from 'ionicons/icons';
 import Tab1 from './pages/MeusAgendamentos';
 import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+import MinhaConta from './pages/MinhaConta';
 import Login from "./pages/Login";
 import Cadastro from './pages/Cadastro';
 
@@ -55,11 +55,11 @@ const App: React.FC = () => (
           <Route exact path="/tab2">
             <Tab2 />
           </Route>
-          <Route path="/tab3">
-            <Tab3 />
+          <Route path="/minha-conta">
+            <MinhaConta />
           </Route>
           <Route exact path="/">
-            <Redirect to="/tab1" />
+            <Redirect to="/login" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
@@ -70,6 +70,10 @@ const App: React.FC = () => (
           <IonTabButton tab="tab2" href="/tab2">
             <IonIcon aria-hidden="true" icon={listOutline} />
             <IonLabel>Agendar</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="tab3" href="/minha-conta">
+            <IonIcon aria-hidden="true" icon={personCircleOutline} />
+            <IonLabel>Minha conta</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

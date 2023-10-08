@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDb6fhya6o3LjIRRy1nb9qislBJgWvsyAY",
-  authDomain: "pedramoura-926cc.firebaseapp.com",
-  projectId: "pedramoura-926cc",
-  storageBucket: "pedramoura-926cc.appspot.com",
-  messagingSenderId: "903279984235",
-  appId: "1:903279984235:web:15c261d0b9f744313d3b2e"
+  apiKey: "AIzaSyC_AVMjUqMrYtV7fx-9uWEMye4bwTLl7zY",
+  authDomain: "eu-agendo.firebaseapp.com",
+  projectId: "eu-agendo",
+  storageBucket: "eu-agendo.appspot.com",
+  messagingSenderId: "789189435348",
+  appId: "1:789189435348:web:770b3e12bc3f7290330041"
 };
 
 const app = initializeApp(firebaseConfig);
