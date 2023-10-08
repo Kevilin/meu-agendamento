@@ -1,66 +1,62 @@
-import {
-	IonContent,
-	IonHeader,
-	IonPage,
-	IonTitle,
-	IonToolbar,
-	IonInput,
-	IonButton,
-	IonLoading,
-} from "@ionic/react";
+import React, { useState } from 'react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonInput, IonButton } from '@ionic/react';
 
-import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { loginUser } from "../firebaseConfig";
-import { toast } from "../toast";
-import { setUserState } from "../redux/actions";
-import { useDispatch } from "react-redux";
+import {
+	createUserWithEmailAndPassword,
+	signInWithEmailAndPassword,
+	onAuthStateChanged,
+	signOut,
+	GoogleAuthProvider,
+	signInWithPopup,
+  } from "firebase/auth";
+
+import { auth } from "../firebase/firebaseConfig";
 
 const Login: React.FC = () => {
-	const [busy, setBusy] = useState<boolean>(false);
-	const history = useHistory();
-	const dispatch = useDispatch();
-	const [username, setUsername] = useState("");
-	const [password, setPassword] = useState("");
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
-	async function login() {
-		setBusy(true);
-		const res: any = await loginUser(username, password);
-		if (res) {
-			console.log("login res", res);
-			dispatch(setUserState(res.user.email));
-			history.replace("/dashboard");
-			toast("You have logged in");
-		}
-		setBusy(false);
-	}
+  function logIn() {
+    return signInWithEmailAndPassword(auth, email, password);
+  }
+  function signUp() {
+    return createUserWithEmailAndPassword(auth, email, password);
+  }
+  function logOut() {
+    window.localStorage.setItem("text", "");
+    return signOut(auth);
+  }
+  function googleSignIn() {
+    const googleAuthProvider = new GoogleAuthProvider();
+    return signInWithPopup(auth, googleAuthProvider);
+  }
 
-	return (
-		<IonPage>
-			<IonHeader>
-				<IonToolbar>
-					<IonTitle>Login</IonTitle>
-				</IonToolbar>
-			</IonHeader>
-			<IonLoading message="Please wait.." duration={0} isOpen={busy} />
-			<IonContent className="ion-padding">
-				<IonInput
-					placeholder="Username?"
-					onIonChange={(e: any) => setUsername(e.target.value)}
-				/>
-				<IonInput
-					type="password"
-					placeholder="Password?"
-					onIonChange={(e: any) => setPassword(e.target.value)}
-				/>
-				<IonButton onClick={login}>Login</IonButton>
-
-				<p>
-					New here? <Link to="/register">Register</Link>
-				</p>
-			</IonContent>
-		</IonPage>
-	);
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Login</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent className="ion-padding">
+        <IonInput
+          type="email"
+          placeholder="Email"
+          value={email}
+          onIonChange={(e) => setEmail(e.detail.value!)}
+        />
+        <IonInput
+          type="password"
+          placeholder="Senha"
+          value={password}
+          onIonChange={(e) => setPassword(e.detail.value!)}
+        />
+        <IonButton expand="full" onClick={logIn}>Login</IonButton>
+        <IonButton expand="full" onClick={googleSignIn}>Login Com Google</IonButton>
+        <IonButton expand="full" routerLink="/cadastro">Cadastre-se</IonButton>
+      </IonContent>
+    </IonPage>
+  );
 };
 
 export default Login;
