@@ -43,7 +43,7 @@ const MinhaConta: React.FC = () => {
         </IonHeader>
         <div className="ion-padding">
           <p>Email: {emailUser}</p>
-          <IonButton onClick={logOut} expand="block" color="danger">Logout</IonButton>
+          <IonButton onClick={logOut} expand="block" color="danger">Sair</IonButton>
         </div>
       </IonContent>
     </IonPage>

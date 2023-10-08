@@ -8,15 +8,11 @@ const MeusAgendamentos: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle class="ion-text-center">Meus Agendamentos</IonTitle>
+          <IonTitle size="large" class="ion-text-center">Meus Agendamentos</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar >
-            <IonTitle >Meus Agendamentoss</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        
         <ListaAgendamentos />
       </IonContent>
     </IonPage>
