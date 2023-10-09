@@ -12,7 +12,6 @@ const MeusAgendamentos: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        
         <ListaAgendamentos />
       </IonContent>
     </IonPage>

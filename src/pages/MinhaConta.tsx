@@ -16,7 +16,7 @@ const MinhaConta: React.FC = () => {
 
   function logOut() {
     signOut(auth);
-    alert("Logout realizado. Redirecionando!");
+    console.log("Logout realizado. Redirecionando!");
     history.push("/login");
   }
 

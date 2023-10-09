@@ -30,10 +30,10 @@ const Cadastro: React.FC = () => {
     e.preventDefault();
     try {
       await signUp(email, password);
-      alert("Cadastro criado com sucesso. Redirecionando!");
+      console.log("Cadastro criado com sucesso. Redirecionando!");
       history.push("/");
     } catch (error) {
-      alert(`Erro ao efetuar o Cadastro. Motivo: ${error.message}`);
+      console.log(`Erro ao efetuar o Cadastro. Motivo: ${error.message}`);
     }
   };
 
