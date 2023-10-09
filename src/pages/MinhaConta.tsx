@@ -54,8 +54,8 @@ const MinhaConta: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
       <>
-        <IonAvatar>
-          <img alt="Imagem" src={userImage} />          
+        <IonAvatar className="ion-avatar-cadastro">
+          <img alt="" src={userImage} />          
         </IonAvatar>
         <IonButton onClick={takePhoto} className='botao-camera'>
             <IonIcon aria-hidden="true" icon={cameraReverseOutline} />

@@ -1,4 +1,4 @@
-ion-avatar {
+.ion-avatar-cadastro {
     overflow: hidden;
     width: 150px!important;
     display: flex;
@@ -10,7 +10,7 @@ ion-avatar {
     margin-top: 20px;
 }
 
-ion-avatar img{
+.ion-avatar-cadastro img{
     background-color: #FD9400;
     background-repeat: no-repeat;
     image-rendering: optimizequality!important;
