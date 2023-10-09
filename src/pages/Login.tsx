@@ -41,10 +41,10 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       await logIn(email, password);
-      alert("Login efetuado com sucesso. Redirecionando!");
+      console.log("Login efetuado com sucesso. Redirecionando!");
       history.push("/");
     } catch (err) {
-      alert("Usuário ou senha incorretos!");
+      console.log("Usuário ou senha incorretos!");
     }
   };
 
@@ -52,10 +52,10 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       await googleSignIn();
-      alert("Login efetuado com sucesso. Redirecionando!");
+      console.log("Login efetuado com sucesso. Redirecionando!");
       history.push("/tab1");
     } catch (error) {
-      alert(
+      console.log(
         `Erro ao efetuar login com a conta Google. Motivo: ${error.message}`
       );
     }
