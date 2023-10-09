@@ -1,0 +1,35 @@
+ion-avatar {
+    overflow: hidden;
+    width: 150px!important;
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    flex: 0 0 50%;
+    max-width: 150px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+ion-avatar img{
+    background-color: #FD9400;
+    background-repeat: no-repeat;
+    image-rendering: optimizequality!important;
+    background-size: cover!important;
+    -o-object-fit: cover!important;
+    object-fit: cover!important;
+    background-position: bottom;
+    width: 100%!important;
+    height: 100%!important;
+    opacity: 1;
+    visibility: inherit;
+}
+
+.botao-camera {
+    position: relative;
+    top: -10px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+}
